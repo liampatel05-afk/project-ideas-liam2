@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Routes Documentation</title>
+</head>
+
+<body>
+    <h1>Task Manager – Admin Routes</h1>
+
+    <h2>GET Routes (Admin)</h2>
+
+    <section>
+        <h3>/admin/tasks</h3>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Server Action:</strong> None (loads admin interface)</p>
+        <p><strong>Side Effects:</strong> None</p>
+        <p><strong>Client Response:</strong> HTML page containing the “Create Task” form and links to edit/delete pages</p>
+    </section>
+
+    <section>
+        <h3>/admin/tasks/:taskId</h3>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Server Action:</strong> SELECT * FROM tasks WHERE id = :taskId;</p>
+        <p><strong>Side Effects:</strong> None</p>
+        <p><strong>Client Response:</strong> HTML page containing forms to edit or delete the selected task</p>
+    </section>
+
+    <h2>POST Routes (Admin)</h2>
+
+    <section>
+        <h3>/admin/tasks</h3>
+        <p><strong>Method:</strong> POST</p>
+        <p><strong>Server Action:</strong></p>
+        <pre>
+INSERT INTO tasks(title, description, deadline, status)
+VALUES (?, ?, ?, ?);
+        </pre>
+        <p><strong>Side Effects:</strong> Creates a new task in the database</p>
+        <p><strong>Client Response:</strong> Redirect to /tasks</p>
+    </section>
+
+    <section>
+        <h3>/admin/tasks/:taskId</h3>
+        <p><strong>Method:</strong> POST</p>
+        <p><strong>Server Action:</strong></p>
+        <pre>
+UPDATE tasks
+SET title=?, description=?, deadline=?, status=?
+WHERE id = :taskId;
+        </pre>
+        <p><strong>Side Effects:</strong> Updates the selected task</p>
+        <p><strong>Client Response:</strong> Redirect to /tasks/:taskId</p>
+    </section>
+
+    <section>
+        <h3>/admin/tasks/:taskId/delete</h3>
+        <p><strong>Method:</strong> POST</p>
+        <p><strong>Server Action:</strong></p>
+        <pre>
+DELETE FROM tasks WHERE id = :taskId;
+        </pre>
+        <p><strong>Side Effects:</strong> Deletes the selected task</p>
+        <p><strong>Client Response:</strong> Redirect to /tasks</p>
+    </section>
+
+</body>
+</html>
