@@ -1,0 +1,362 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #222222;
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c23b3b;
+    color: white;
+    padding: 1.5rem 1.25rem;
+    border-bottom: 4px solid #111111;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+nav a,
+.nav-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 58px;
+    color: white;
+    background-color: #050505;
+    text-decoration: none;
+    border: 0;
+    border-radius: 5px;
+    font: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+nav a:hover,
+.nav-form button:hover {
+    background-color: #333333;
+}
+
+.nav-form {
+    margin: 0;
+}
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.25rem;
+    flex: 1;
+}
+
+section {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: 1rem auto;
+}
+
+.hero-actions,
+.task-actions,
+.section-heading {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hero-actions {
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.section-heading {
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.tasks-panel {
+    min-height: 620px;
+    border: 2px solid #c23b3b;
+}
+
+.task-grid,
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.task-card,
+.user-card {
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: #fafafa;
+}
+
+.task-card h3,
+.user-card h3 {
+    margin-top: 0;
+}
+
+.task-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+button,
+.button {
+    display: inline-block;
+    background-color: #c23b3b;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background-color: #992f2f;
+}
+
+.secondary {
+    background-color: #555555;
+}
+
+.danger {
+    background-color: #7a1f1f;
+}
+
+.small {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+}
+
+.compact-section,
+.account-page {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+}
+
+.compact-form {
+    width: 430px;
+    min-height: 270px;
+    margin: 1rem auto;
+    background-color: #7a1f1f;
+    border: 1px solid #5d1717;
+    padding: 0.9rem;
+    color: white;
+    text-align: left;
+}
+
+.account-form {
+    min-height: 190px;
+}
+
+.task-form-box {
+    min-height: 330px;
+}
+
+.compact-row {
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+}
+
+.textarea-row {
+    align-items: start;
+}
+
+.compact-row label {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.compact-row input,
+.compact-row textarea {
+    width: 100%;
+    padding: 0.25rem;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    font: inherit;
+}
+
+.compact-row textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.status-fieldset {
+    border: 1px solid #b65b5b;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.status-fieldset legend {
+    color: white;
+    font-weight: bold;
+}
+
+.status-options {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.35rem;
+    color: white;
+}
+
+.status-options label {
+    font-weight: bold;
+}
+
+.compact-button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.compact-button-row button {
+    background-color: #eeeeee;
+    color: #111111;
+    border: 1px solid #999999;
+    border-radius: 0;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+.compact-button-row button:hover {
+    background-color: #dddddd;
+}
+
+.error-text {
+    color: #fff4cc;
+    font-size: 0.85rem;
+    margin: 0.15rem 0 0.4rem 115px;
+}
+
+.account-page .error-text {
+    color: #fff4cc;
+}
+
+.flash-message {
+    background-color: #fff4cc;
+    border: 1px solid #d4b643;
+    border-radius: 5px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    background-color: #222222;
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .task-grid,
+    .user-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 620px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a,
+    .nav-form button {
+        width: 100%;
+    }
+
+    .hero-actions,
+    .task-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .task-grid,
+    .user-grid,
+    .task-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .compact-form {
+        width: 100%;
+    }
+
+    .compact-row {
+        grid-template-columns: 1fr;
+    }
+
+    .error-text {
+        margin-left: 0;
+    }
+}

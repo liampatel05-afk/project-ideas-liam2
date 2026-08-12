@@ -1,0 +1,9 @@
+{
+    "tasks": {
+        "db:init": "deno run --allow-read --allow-write --allow-env --allow-ffi --allow-net tasks/db-init.js",
+        "start": "deno run --allow-net --allow-read --allow-write --allow-env --allow-ffi main.js"
+    },
+    "imports": {
+        "@db/sqlite": "jsr:@db/sqlite@0.12.0"
+    }
+}
