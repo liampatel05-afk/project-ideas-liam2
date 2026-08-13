@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Task | TaskFlow Prototype</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/create-task.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -22,41 +22,30 @@
 
 
 <main>
-    <section class="compact-section task-form-section" aria-labelledby="task-form-heading">
-        <h2 id="task-form-heading">Add a new task</h2>
-        <form id="create-task-form" class="compact-form task-form-box">
-            <div class="compact-row">
-                <label for="label">Task:</label>
-                <input type="text" id="label" name="label" required>
-            </div>
-
-            <div class="compact-row textarea-row">
+    <section class="form-section" aria-labelledby="create-heading">
+        <h2 id="create-heading">Add a new task</h2>
+        <form class="task-form">
+            <p>
+                <label for="task">Task:</label>
+                <input type="text" id="task" name="task" required>
+            </p>
+            <p>
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" rows="4" required></textarea>
-            </div>
-
-            <div class="compact-row">
+            </p>
+            <p>
                 <label for="dueDate">Due date:</label>
                 <input type="date" id="dueDate" name="dueDate" required>
-            </div>
-
-            <fieldset class="status-fieldset">
-                <legend>Status:</legend>
-                <div class="status-options">
-                    <input type="radio" id="not-started" name="status" value="Not started" checked>
-                    <label for="not-started">Not started</label>
-
-                    <input type="radio" id="in-progress" name="status" value="In progress">
-                    <label for="in-progress">In progress</label>
-
-                    <input type="radio" id="completed" name="status" value="Completed">
-                    <label for="completed">Completed</label>
-                </div>
+            </p>
+            <fieldset>
+                <legend>Status</legend>
+                <p><input type="radio" id="not-started" name="status" value="Not started" checked> <label for="not-started">Not started</label></p>
+                <p><input type="radio" id="in-progress" name="status" value="In progress"> <label for="in-progress">In progress</label></p>
+                <p><input type="radio" id="completed" name="status" value="Completed"> <label for="completed">Completed</label></p>
             </fieldset>
-
-            <div class="compact-button-row">
+            <p class="form-buttons">
                 <button type="submit">create</button>
-            </div>
+            </p>
         </form>
     </section>
 </main>
